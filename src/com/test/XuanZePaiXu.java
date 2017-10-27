@@ -1,5 +1,8 @@
 package com.test;
 
+/**
+ * @author yuanbing
+ */
 public class XuanZePaiXu {
 
     /***
@@ -11,15 +14,17 @@ public class XuanZePaiXu {
     public static void main(String[] args) {
         int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1, 8};
         System.out.println("排序之前：");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (int anA1 : a) {
+            System.out.print(anA1 + " ");
         }
         //简单的选择排序
         for (int i = 0; i < a.length; i++) {
             int min = a[i];
-            int n = i; //最小数的索引
+            //最小数的索引
+            int n = i;
             for (int j = i + 1; j < a.length; j++) {
-                if (a[j] < min) {  //找出最小的数
+                //找出最小的数
+                if (a[j] < min) {
                     min = a[j];
                     n = j;
                 }
@@ -30,8 +35,8 @@ public class XuanZePaiXu {
         }
         System.out.println();
         System.out.println("排序之后：");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (int anA : a) {
+            System.out.print(anA + " ");
         }
     }
 }

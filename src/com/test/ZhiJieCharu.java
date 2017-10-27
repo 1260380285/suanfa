@@ -2,6 +2,9 @@ package com.test;
 
 import java.util.Arrays;
 
+/**
+ * @author yuanbing
+ */
 public class ZhiJieCharu {
     /***
      * 直接插入排序是稳定的排序
@@ -14,8 +17,8 @@ public class ZhiJieCharu {
     public static void main(String[] args) {
         int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1};
         System.out.println("排序之前：");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (int anA : a) {
+            System.out.print(anA + " ");
         }
         //直接插入排序
         for (int i = 1; i < a.length; i++) {

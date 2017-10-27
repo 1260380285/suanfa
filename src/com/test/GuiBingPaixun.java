@@ -1,5 +1,10 @@
 package com.test;
 
+/***
+ * @author yuanbing
+ * @date
+ *
+ */
 public class GuiBingPaixun {
     /***
      * 归并排序是稳定的排序方法。
@@ -9,15 +14,17 @@ public class GuiBingPaixun {
     public static void main(String[] args) {
         int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1, 8};
         System.out.println("排序之前：");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (int anA : a) {
+            System.out.print(anA + " ");
         }
         //归并排序
         mergeSort(a, 0, a.length - 1);
         System.out.println();
         System.out.println("排序之后：");
-        for (int i = 0; i < a.length; i++) {
+        int i = 0;
+        while (i < a.length) {
             System.out.print(a[i] + " ");
+            i++;
         }
     }
 
@@ -35,7 +42,8 @@ public class GuiBingPaixun {
 
     private static void merge(int[] a, int left, int middle, int right) {
         int[] tmpArr = new int[a.length];
-        int mid = middle + 1; //右边的起始位置
+        //右边的起始位置
+        int mid = middle + 1;
         int tmp = left;
         int third = left;
         while (left <= middle && mid <= right) {

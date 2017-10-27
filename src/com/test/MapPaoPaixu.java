@@ -19,8 +19,8 @@ public class MapPaoPaixu {
     public static void main(String[] args) {
         int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1, 8};
         System.out.println("排序之前：");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (int anA : a) {
+            System.out.print(anA + " ");
         }
         //冒泡排序
         for (int i = 0; i < a.length; i++) {

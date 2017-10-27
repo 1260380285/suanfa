@@ -1,5 +1,8 @@
 package com.test;
 
+/***
+ * @author yuanbing
+ */
 public class ErFenChazhaoPaixu {
     /***
      * 二分法插入排序也是稳定的。
@@ -10,18 +13,22 @@ public class ErFenChazhaoPaixu {
     public static void main(String[] args) {
         int[] a = {49, 38, 65, 97, 176, 213, 227, 49, 78, 34, 12, 164, 11, 18, 1};
         System.out.println("排序之前：");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (int anA : a) {
+            System.out.print(anA + " ");
         }
         //二分插入排序
         sort(a);
         System.out.println();
         System.out.println("排序之后：");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (int anA : a) {
+            System.out.print(anA + " ");
         }
     }
 
+    /***
+     * 排序
+     * @param a array
+     */
     private static void sort(int[] a) {
         for (int i = 0; i < a.length; i++) {
             int temp = a[i];
