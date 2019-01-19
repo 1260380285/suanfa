@@ -46,6 +46,18 @@ class MyInvocationHandler implements InvocationHandler{
      * @return 代理对象
      */
     public Object getProxy() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("11--"+Thread.currentThread().getContextClassLoader());
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("---"+Thread.currentThread().getContextClassLoader());
+            }
+        }).start();
         //System.out.println(Thread.currentThread().getContextClassLoader());
         //System.out.println(Thread.currentThread().getContextClassLoader().getParent());
         //interface传入的原因是需要创建接口的代理类 this传入是需要毁掉这边的invoke方法
