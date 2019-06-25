@@ -20,6 +20,7 @@ public class Test {
         getAnnotationValue();
     }
 
+
     public static void getAnnotationValue(){
         try {
             Class clazz =Class.forName("com.annotation.Test");
@@ -46,10 +47,4 @@ public class Test {
         System.out.println("getAnnotation"+a);
     }
 
-    private void getReflect(){
-        Field[] declaredFields = Test.class.getDeclaredFields();
-        for(int i=0;i<declaredFields.length;i++){
-            System.out.println(declaredFields[i]);
-        }
-    }
 }

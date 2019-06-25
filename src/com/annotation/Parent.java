@@ -1,5 +1,7 @@
 package com.annotation;
 
+import java.lang.annotation.Inherited;
+
 /**
  * @author: yuanbing
  * @created time: 2018/12/6 16:40
