@@ -15,7 +15,7 @@ public class ZhiJieCharu {
      * 直接插入排序的平均时间复杂度为 O(n2)。
      */
     public static void main(String[] args) {
-        int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1};
+        int[] a = {49, 38, 65, 97, 76, 13, 27};
         System.out.println("排序之前：");
         for (int anA : a) {
             System.out.print(anA + " ");

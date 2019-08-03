@@ -10,11 +10,12 @@ public class KuaiSuPaixun {
      * 当n较大时使用快排比较好，当序列基本有序时用快排反而不好。
      */
     public static void main(String[] args) {
-        int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1, 8};
+        int[] a = {49, 38, 65, 97, 76, 13, 27, 78, 34, 12};
         System.out.println("排序之前：");
         for (int anA1 : a) {
             System.out.print(anA1 + " ");
         }
+        System.out.println();
         //快速排序
         quick(a);
         System.out.println();
@@ -55,5 +56,12 @@ public class KuaiSuPaixun {
         }
         a[low] = temp;
         return low;
+    }
+
+    private static void print(int[] list) {
+        for (int i = 0; i < list.length; i++) {
+            System.out.print(list[i] + " ");
+        }
+        System.out.println();
     }
 }
