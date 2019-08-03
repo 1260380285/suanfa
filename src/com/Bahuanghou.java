@@ -8,6 +8,7 @@ package com;
 
 
 public class Bahuanghou {
+
     static int[] map;
     /**
      * 统计解的个数
@@ -42,21 +43,21 @@ public class Bahuanghou {
     }
 
     /**
-     * 检验第i行的k列上是否可以摆放皇后
+     * 检验第row行的column列上是否可以摆放皇后
      *
-     * @param i
-     * @param k
-     * @return
+     * @param row    第i行
+     * @param column 第k列
+     * @return 是否合格
      */
-    private static boolean find(int i, int k) {
-        int j = 1;
-        //j=1~i-1是已经放置了皇后的行
-        while (j < i) {
+    private static boolean canPlace(int row, int column) {
+        int currentRow = 1;
+        //对已经放置了皇后的行进行判断
+        while (currentRow < row) {
             //第j行的皇后是否在k列或(j,map[j])与(i,k)是否在斜线上
-            if (map[j] == k || Math.abs(j - i) == Math.abs(map[j] - k)) {
+            if (map[currentRow] == column || Math.abs(currentRow - row) == Math.abs(map[currentRow] - column)) {
                 return false;
             }
-            j++;
+            currentRow++;
         }
         return true;
     }
@@ -64,31 +65,31 @@ public class Bahuanghou {
     /**
      * 放置皇后到棋盘上
      *
-     * @param k
-     * @param n
+     * @param row 当前行
+     * @param max 最后一行
      */
-    private static void place(int k, int n) {
-        int j;
+    private static void place(int row, int max) {
+        int column;
         //递归出口
-        if (k > n) {
-            print(n);
+        if (row > max) {
+            print(max);
         } else {
-            //试探第k行的每一个列
-            for (j = 1; j <= n; j++) {
-                if (find(k, j)) {
+            //某一行从左到右循环
+            for (column = 1; column <= max; column++) {
+                if (canPlace(row, column)) {
                     //保存位置
-                    map[k] = j;
+                    map[row] = column;
                     //接着下一行
-                    place(k + 1, n);
+                    place(row + 1, max);
                 }
             }
         }
     }
 
     public static void main(String[] args) {
-        int N=10;
-        map = new int[16];
-        place(1, 15);
+        int N = 5;
+        map = new int[N + 1];
+        place(1, N);
         System.out.print("总共解个数：" + count);
     }
 }
