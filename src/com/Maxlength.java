@@ -66,7 +66,7 @@ public class Maxlength {
         char[] array2 = str2.toCharArray();
         //当前开始的行数
         int row = 0;
-        //开始的烈属
+        //开始的列数
         int column = array2.length - 1;
         //记录最大长度
         int max = 0;
