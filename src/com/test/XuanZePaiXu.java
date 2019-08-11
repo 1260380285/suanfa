@@ -12,7 +12,7 @@ public class XuanZePaiXu {
      * 时间复杂度：T(n)=O(n2)。
      */
     public static void main(String[] args) {
-        int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1, 8};
+        int[] a = {49, 38, 65, 97, 76, 13, 27, 1, 8};
         System.out.println("排序之前：");
         for (int anA1 : a) {
             System.out.print(anA1 + " ");
