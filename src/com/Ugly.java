@@ -38,4 +38,5 @@ public class Ugly {
         }
         return arr[number - 1];
     }
+
 }
