@@ -38,7 +38,8 @@ public class PreMiddleToTree {
         for (int i = 0; i < middleOrderTree.length; i++) {
             middleOrderMap.put(middleOrderTree[i], i);
         }
-        return calculateTree(preOrderTree, 0, preOrderTree.length - 1, 0, middleOrderTree.length - 1, middleOrderMap);
+        return calculateTree(preOrderTree, 0, preOrderTree.length - 1,
+                0, middleOrderTree.length - 1, middleOrderMap);
     }
 
     public static Node calculateTree(int[] preOrderTree, int preStartIndex, int preEndIndex, int middleStartIndex, int middleEndIndex,
@@ -46,13 +47,16 @@ public class PreMiddleToTree {
         if (preStartIndex > preEndIndex) {
             return null;
         }
-        System.out.println("  p[preStartIndex]:" + preOrderTree[preStartIndex] + "  preStartIndex:" + preStartIndex + "  preEndIndex:" + preEndIndex + "  middleStartIndex:" + middleStartIndex + "  middleEndIndex:" + middleEndIndex);
+        System.out.println("  p[preStartIndex]:" + preOrderTree[preStartIndex] + "  preStartIndex:" + preStartIndex
+                + "  preEndIndex:" + preEndIndex + "  middleStartIndex:" + middleStartIndex + "  middleEndIndex:" + middleEndIndex);
         Node head = new Node(preOrderTree[preStartIndex]);
         int headIndexInMiddle = middleOrderMap.get(preOrderTree[preStartIndex]);
-        //左
-        head.left = calculateTree(preOrderTree, preStartIndex + 1, preStartIndex + headIndexInMiddle - middleStartIndex, middleStartIndex, headIndexInMiddle - 1, middleOrderMap);
-        //右
-        head.right = calculateTree(preOrderTree, preStartIndex + headIndexInMiddle - middleStartIndex + 1, preEndIndex, headIndexInMiddle + 1, middleEndIndex, middleOrderMap);
+        //前序遍历和中序遍历的左半部分
+        head.left = calculateTree(preOrderTree, preStartIndex + 1, preStartIndex + headIndexInMiddle - middleStartIndex,
+                middleStartIndex, headIndexInMiddle - 1, middleOrderMap);
+        //前序遍历和中序遍历的右半部分
+        head.right = calculateTree(preOrderTree, preStartIndex + headIndexInMiddle - middleStartIndex + 1,
+                preEndIndex, headIndexInMiddle + 1, middleEndIndex, middleOrderMap);
         return head;
     }
 }
