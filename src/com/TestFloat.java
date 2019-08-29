@@ -14,5 +14,8 @@ public class TestFloat {
         BigDecimal num1 = new BigDecimal(3);
         BigDecimal num2 = new BigDecimal(2.6);
         System.out.print(num1.subtract(num2));
+        float s=1;
+        s=s+1;
+        System.out.print(s);
     }
 }
