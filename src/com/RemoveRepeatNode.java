@@ -66,6 +66,8 @@ public class RemoveRepeatNode {
     }
 
     public static void main(String[] args) {
+       // String s=Integer.toBinaryString(-12);
+        //System.out.print(s);
         Node head = new Node(1);
         head.next = new Node(2);
         head.next.next = new Node(3);
